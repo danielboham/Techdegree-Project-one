@@ -7,12 +7,12 @@ project 1 - A Random Quote Generator
 
 
 /*** 
-  Create the array of quote objects and name it `quotes`.
-  Add at least five quote objects to the `quotes` array.
-  Give each quote object a `quote` and `source` property.
-  Add the `citation` property to at least one object in the array.
-  Add the `year` property to at least one object in the array.
-  Use console.log() to log your array of quotes to the console.
+  x Create the array of quote objects and name it `quotes`.
+  x Add at least five quote objects to the `quotes` array.
+  x Give each quote object a `quote` and `source` property.
+  x Add the `citation` property to at least one object in the array.
+  x Add the `year` property to at least one object in the array.
+  x Use console.log() to log your array of quotes to the console.
 ***/
 
 
@@ -20,8 +20,8 @@ project 1 - A Random Quote Generator
 
 /***
   Create the `getRandomQuote` function to:
-   - Create a variable to store a random number 
-   - Cse the random number to `return` a random quote object from the `quotes` array.
+   x Create a variable to store a random number
+   - Use the random number to `return` a random quote object from the `quotes` array.
 ***/
 
 
@@ -44,11 +44,64 @@ project 1 - A Random Quote Generator
 
 
 /***
-  When the "Show another quote" button is clicked, the event listener 
-  below will be triggered, and it will call, or "invoke", the `printQuote` 
-  function. So do not make any changes to the line of code below this 
+  When the "Show another quote" button is clicked, the event listener
+  below will be triggered, and it will call, or "invoke", the `printQuote`
+  function. So do not make any changes to the line of code below this
   comment.
 ***/
+
+var listQuote;
+
+var quotes = [
+    {
+        quote: 'Get busy living or get busy dying.',
+        source: '-Stephen King',
+        citation: 'Book',
+        year: 1982
+    },
+    {
+        quote: 'Twenty years from now you will be more disappointed by the things that you did not do than by the ones you did do.',
+        source: '-Marc Twain',
+        citation: 'New York Times',
+        year: 1901
+    },
+    {
+        quote: 'Great minds discuss ideas; average minds discuss events; small minds discuss people.',
+        source: '-Eleanor Roosevelt',
+        citation: 'Speech',
+        year: 1945
+    },
+    {
+        quote: 'Those who dare to fail miserably can achieve greatly.',
+        source: '-John F. Kennedy',
+        citation: 'Interview',
+        year: 1961
+    },
+    {
+        quote: 'It is hard to fail, but it is worse never to have tried to succeed.',
+        source: '-Theodore Roosevelt',
+        citation: 'Speech',
+        year: 1910
+    }
+];
+
+//console.log(quotes);
+
+// function that creates a random number which selects the array index
+function getRandomQuote(){
+   listQuote =  Math.floor(Math.random() * 4);
+   return listQuote;
+    {
+
+
+    }
+}
+
+console.log(getRandomQuote());
+
+
+
+
 
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 
