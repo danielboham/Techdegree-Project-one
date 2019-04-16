@@ -21,7 +21,7 @@ project 1 - A Random Quote Generator
 /***
   Create the `getRandomQuote` function to:
    x Create a variable to store a random number
-   - Use the random number to `return` a random quote object from the `quotes` array.
+   x Use the random number to `return` a random quote object from the `quotes` array.
 ***/
 
 
@@ -50,7 +50,8 @@ project 1 - A Random Quote Generator
   comment.
 ***/
 
-var listQuote;
+var listIndex;
+var quoteObject;
 
 var quotes = [
     {
@@ -85,22 +86,18 @@ var quotes = [
     }
 ];
 
+
+
 //console.log(quotes);
 
-// function that creates a random number which selects the array index
-function getRandomQuote(){
-   listQuote =  Math.floor(Math.random() * 4);
-   return listQuote;
-    {
-
-
-    }
+// function that creates a random number for the index value
+function getRandomQuote() {
+    listIndex = Math.floor(Math.random() * 5);
+    quoteObject = quotes[listIndex];
+    return quoteObject;
 }
 
 console.log(getRandomQuote());
-
-
-
 
 
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
