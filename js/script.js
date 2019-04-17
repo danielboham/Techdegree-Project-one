@@ -52,35 +52,37 @@ project 1 - A Random Quote Generator
 
 var listIndex;
 var quoteObject;
+var quoteContent;
+var html;
 
 var quotes = [
     {
         quote: 'Get busy living or get busy dying.',
-        source: '-Stephen King',
+        source: 'Stephen King',
         citation: 'Book',
         year: 1982
     },
     {
         quote: 'Twenty years from now you will be more disappointed by the things that you did not do than by the ones you did do.',
-        source: '-Marc Twain',
+        source: 'Marc Twain',
         citation: 'New York Times',
         year: 1901
     },
     {
         quote: 'Great minds discuss ideas; average minds discuss events; small minds discuss people.',
-        source: '-Eleanor Roosevelt',
+        source: 'Eleanor Roosevelt',
         citation: 'Speech',
         year: 1945
     },
     {
         quote: 'Those who dare to fail miserably can achieve greatly.',
-        source: '-John F. Kennedy',
+        source: 'John F. Kennedy',
         citation: 'Interview',
         year: 1961
     },
     {
         quote: 'It is hard to fail, but it is worse never to have tried to succeed.',
-        source: '-Theodore Roosevelt',
+        source: 'Theodore Roosevelt',
         citation: 'Speech',
         year: 1910
     }
@@ -92,15 +94,28 @@ var quotes = [
 
 // function that creates a random number for the index value
 function getRandomQuote() {
-    listIndex = Math.floor(Math.random() * 5);
+    listIndex = Math.floor(Math.random() * quotes.length);
     quoteObject = quotes[listIndex];
     return quoteObject;
 }
 
-console.log(getRandomQuote());
+//console.log(getRandomQuote());
+
+//function to print the quote
+function printQuote() {
+    quoteContent = getRandomQuote();
+    html = '';
+    html += '<p class="quote">' + quoteContent.quote + '</p>';
+    html += '<p class="source">' + quoteContent.source;
+    html += '<span class="citation">' + quoteContent.citation + '</span>';
+    html += '<span class="year">' + quoteContent.year + '</span>';
+    html += '</p>';
+    document.getElementById('quote-box').innerHTML = html;
+    return html;
+}
+
+
+//console.log(printQuote());
 
 
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
-
-
-// Remember to delete the comments that came with this file, and replace them with your own code comments.
